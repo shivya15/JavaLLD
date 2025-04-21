@@ -1,0 +1,23 @@
+User -> userId, username, name, email.
+Post -> postid, content, userid, timestamp.
+FeedItem -> postid, userid, timestamp.
+
+UserService -> Map<Integer, User> users
+-addUser
+-getUser
+-getAllUsers
+
+PostService -> Map<Integer, Post> posts
+-uploadPost
+-getPost
+-deletePost
+-getAllPost
+
+FollowService -> Map<Integer, List<Integer>> followers, following
+-initializeUserFollowData
+-followUser
+-unfollowUser
+-getFollowing
+
+FeedService -> userService, followService, PostService
+-getNewsFeed
